@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/main.js" defer></script>
+  <title>LS Game</title>
+</head>
+<body>
+<div id="registration-container">
+  <div id="register">
+    <form id="user-form">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <button type="submit">Registra't</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="game"><!-- Sección Izquierda: Formulario de Juego y Tablero -->
+  <div id="game-form-container">
+    <div id ="game-container">
+      <form id="game-form">
+        <label for="cards-number">Nombre de cartas:</label>
+        <input type="text" id="cards-number" name="cards-number" required>
+        <button type="submit" id="play-btn">Jugar</button>
+      </form>
+      <div id="dialogue">
+        <modal id="modal"></modal>
+      </div>
+      <span id="timer">0m 0s</span>
+      <div id="game-board">
+        <!-- Las cartas se generarán aquí via JavaScript -->
+      </div>
+    </div>
+    <div>
+      <div id="ranking-container">
+        <h2>Ranking</h2>
+        <table id="ranking">
+          <thead>
+          <tr>
+            <th>Posició</th>
+            <th>Username</th>
+            <th>Mail</th>
+            <th>Temps</th>
+            <th>Número de cartes</th>
+          </tr>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <table id="myPosition">
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>Mail</th>
+          <th>Temps</th>
+          <th>Número de cartes</th>
+        </tr>
+        </thead>
+        <tbody id="tbodyA">
+        </tbody>
+      </table>
+    </div>
+    <button id="logout-btn">Logout</button>
+    <div class="gameElement">
+    </div>
+    <div class="gameElement">
+    </div>
+  </div>
+</div>
+</body>
+</html>

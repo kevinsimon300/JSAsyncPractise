@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ecf0f1;
+  --text-color: #333;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+}
+input, select, textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#registration-container {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.ranking-container {
+  border-left: 2px solid var(--secondary-color);
+}
+
+
+#game-container {
+  float: left;
+  width: 100%;
+}
+#ranking-container {
+  float: right;
+  width: 100%;
+  border-left: 2px solid var(--secondary-color);
+}
+
+
+#game-container,
+#ranking-container {
+  flex: 1;
+  padding: 30px;
+  max-width: 50%;
+}
+
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin: 30px;
+}
+
+
+.card {
+  width: 100px;
+  height: 150px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  border-radius: 10px;
+}
+
+
+.card-front {
+  background-image: url("../img/carta_pokemon_detras.webp");
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(0deg);
+}
+
+
+.card-back {
+  background-color: #1a73e8;
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+#game-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#game-form input,
+#game-form button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#game-form button {
+  background-color: #1a73e8;
+  color: white;
+  cursor: pointer;
+}
+
+#game-form button:hover {
+  background-color: #1666c1;
+}
+
+
+.card.matched .card-back {
+  background-color: #00ff00;
+}
+
+@media (max-width: 800px) {
+  #main-container {
+    flex-direction: column;
+  }
+
+  #game-container,
+  #ranking-container {
+    min-width: 100%;
+  }
+}
